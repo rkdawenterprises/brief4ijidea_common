@@ -142,7 +142,7 @@ This IntelliJ IDEA extension adds key bindings and functionality that attempts t
 
 ---
 ## Contact/Bugs
-<p>Enter bugs at &quot;<a href=https://github.com/rkdawenterprises/brief4ijidea/issues target="_blank">Brief for VS Code Issues</a>&quot;.</p>
+<p>Enter bugs at &quot;<a href=https://github.com/rkdawenterprises/brief4ijidea/issues target="_blank">Brief Editor Emulator for IntelliJ IDEA  Issues</a>&quot;.</p>
 <p>You can email me at <a href="mailto:&#109;&#97;&#105;&#108;&#116;&#111;&#58;rkdawenterprises&#64;gmail&#46;com&#46;no!spam?subject=Brief Editor Emulation for IntelliJ IDEA">rkdawenterprises&#64;gmail&#46;com&#46;no!spam</a>. I don't look at this very often so it may take a while to hear back.</p>
 <p>I started using Brief in the early 1990s when I was at Compaq Computer Corporation working on printers. I thought at the time that it was way superior to any editor I had used to date.</p>
 <p>I created this project as an exercise for me to learn some Kotlin and Intellij IDEA plugin development; Just having fun. I don't believe there is a high demand for Brief emulation anywhere. Regardless, I have always really liked the Brief key assignments and feature set and I try and set it up in any editor I use. So if you are/were also into Brief, I hope you enjoy using this.</p>
@@ -171,16 +171,16 @@ Plugin based on the [IntelliJ Platform Plugin Template][template].
 <!-- Badges -->
 [template]: https://github.com/JetBrains/intellij-platform-plugin-template
 
-[plugin-repo]: https://plugins.jetbrains.com/plugin/164-ideavim
-[plugin-downloads-svg]: http://img.shields.io/jetbrains/plugin/d/IdeaVIM
-[plugin-rating-svg]: http://img.shields.io/jetbrains/plugin/r/rating/IdeaVIM
-[plugin-version-svg]: https://img.shields.io/jetbrains/plugin/v/ideavim?label=version
+[plugin-repo]: https://plugins.jetbrains.com/plugin/164-xxxx
+[plugin-downloads-svg]: http://img.shields.io/jetbrains/plugin/d/xxxx
+[plugin-rating-svg]: http://img.shields.io/jetbrains/plugin/r/rating/xxxx
+[plugin-version-svg]: https://img.shields.io/jetbrains/plugin/v/xxxx?label=version
 
-[gitter-svg]: https://badges.gitter.im/JetBrains/ideavim.svg
-[gitter]: https://gitter.im/JetBrains/ideavim?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+[gitter-svg]: https://badges.gitter.im/JetBrains/xxxx.svg
+[gitter]: https://gitter.im/JetBrains/xxxx?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 
-[twitter]: https://twitter.com/ideavim
-[twitter-svg]: https://img.shields.io/twitter/follow/ideavim?label=twitter%20%40ideavim
+[twitter]: https://twitter.com/xxxx
+[twitter-svg]: https://img.shields.io/twitter/follow/xxxx?label=twitter%20%40xxxx
 
 [contributions-welcome-svg]: http://img.shields.io/badge/contributions-welcome-brightgreen
-[contributions-welcome]: https://github.com/JetBrains/ideavim/blob/master/CONTRIBUTING.md
+[contributions-welcome]: https://github.com/JetBrains/xxxx/blob/master/CONTRIBUTING.md
