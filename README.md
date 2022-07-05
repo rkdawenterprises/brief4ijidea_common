@@ -6,14 +6,11 @@
 
 <!-- TODO: Examples only. Needs cleanup. -->
 ![Build](https://github.com/rkdawenterprises/brief4ijidea/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Contributions welcome][contributions-welcome-svg]][contributions-welcome]
+[![Version](https://img.shields.io/jetbrains/plugin/v/net.ddns.rkdawenterprises.brief4ijidea.svg)](https://plugins.jetbrains.com/plugin/net.ddns.rkdawenterprises.brief4ijidea)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/net.ddns.rkdawenterprises.brief4ijidea.svg)](https://plugins.jetbrains.com/plugin/net.ddns.rkdawenterprises.brief4ijidea)
 [![Downloads][plugin-downloads-svg]][plugin-repo]
 [![Rating][plugin-rating-svg]][plugin-repo]
 [![Version][plugin-version-svg]][plugin-repo]
-[![Gitter][gitter-svg]][gitter]
-[![Twitter][twitter-svg]][twitter]
 
 ## Template ToDo list
 - [x] Create a new [IntelliJ Platform Plugin Template][template] project.
@@ -38,10 +35,10 @@ This IntelliJ IDEA extension adds key bindings and functionality that attempts t
 ## Installation
 
 - Using IDE built-in plugin system:
-  
+
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "brief4ijidea"</kbd> >
   <kbd>Install Plugin</kbd>
-  
+
 - Manually:
 
   Download the [latest release](https://github.com/rkdawenterprises/brief4ijidea/releases/latest) and install it manually using
@@ -144,9 +141,9 @@ This IntelliJ IDEA extension adds key bindings and functionality that attempts t
 ## Contact/Bugs
 <p>Enter bugs at &quot;<a href=https://github.com/rkdawenterprises/brief4ijidea/issues target="_blank">Brief Editor Emulator for IntelliJ IDEA  Issues</a>&quot;.</p>
 <p>You can email me at <a href="mailto:&#109;&#97;&#105;&#108;&#116;&#111;&#58;rkdawenterprises&#64;gmail&#46;com&#46;no!spam?subject=Brief Editor Emulation for IntelliJ IDEA">rkdawenterprises&#64;gmail&#46;com&#46;no!spam</a>. I don't look at this very often so it may take a while to hear back.</p>
-<p>I started using Brief in the early 1990s when I was at Compaq Computer Corporation working on printers. I thought at the time that it was way superior to any editor I had used to date.</p>
+<p>I started using Brief in the early 1990s when I was at Compaq Computer Corporation working on printers. I thought at the time that it was way superior to any editor I had used to date. I used it for so long, the key bindings and particular functionality just stuck with me.</p>
 <p>I created this project as an exercise for me to learn some Kotlin and Intellij IDEA plugin development; Just having fun. I don't believe there is a high demand for Brief emulation anywhere. Regardless, I have always really liked the Brief key assignments and feature set and I try and set it up in any editor I use. So if you are/were also into Brief, I hope you enjoy using this.</p>
-<p>One of the goals of this project was to have minimal functional effect on the Intellig IDEA &quot;Editor Text Document&quot; editor. So this is by no means a perfect example of the Brief editor, and it's a little quirky at times, mainly because it is limited by the API and architecture of the existing editor. I try to note any deviations in the command descriptions, at least, deviations from the limited documentation and knowledge I have. I have also added some commands as documented above. You can, of course, disable any key bindings and/or set them back to default in the <kbd>settings</kbd>-&gt;<kbd>keyboard shortcuts</kbd>.</p>
+<p>One of the goals of this project was to have minimal functional effect on the IntelliJ IDEA &quot;Editor Text Document&quot; editor. So this is by no means a perfect example of the Brief editor, and it's a little quirky at times, mainly because it is limited by the API and architecture of the existing editor. I try to note any deviations in the command descriptions, at least, deviations from the limited documentation and knowledge I have. I have also added some commands as documented above. You can, of course, disable any key bindings and/or set them back to default in the <kbd>settings</kbd>-&gt;<kbd>keyboard shortcuts</kbd>.</p>
 <p>BTW, I don't have a working example of Brief, just the old documentation. Feel free to let me know if I have implemented something improperly. Also, I did not try to emulate all of Brief's functionality. This is most certainly a subset.</p>
 <h3 style="color:#0000AA">License</h3>
 
@@ -175,12 +172,3 @@ Plugin based on the [IntelliJ Platform Plugin Template][template].
 [plugin-downloads-svg]: http://img.shields.io/jetbrains/plugin/d/xxxx
 [plugin-rating-svg]: http://img.shields.io/jetbrains/plugin/r/rating/xxxx
 [plugin-version-svg]: https://img.shields.io/jetbrains/plugin/v/xxxx?label=version
-
-[gitter-svg]: https://badges.gitter.im/JetBrains/xxxx.svg
-[gitter]: https://gitter.im/JetBrains/xxxx?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
-
-[twitter]: https://twitter.com/xxxx
-[twitter-svg]: https://img.shields.io/twitter/follow/xxxx?label=twitter%20%40xxxx
-
-[contributions-welcome-svg]: http://img.shields.io/badge/contributions-welcome-brightgreen
-[contributions-welcome]: https://github.com/JetBrains/xxxx/blob/master/CONTRIBUTING.md

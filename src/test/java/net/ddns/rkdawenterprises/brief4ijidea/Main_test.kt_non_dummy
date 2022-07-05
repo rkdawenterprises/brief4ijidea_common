@@ -1,10 +1,26 @@
+/*
+ * Copyright (c) 2022 RKDAW Enterprises and Ralph Williamson
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 @file:Suppress("ClassName",
                "RedundantSemicolon",
                "LocalVariableName",
                "HardCodedStringLiteral",
                "SpellCheckingInspection")
 
-package net.ddns.rkdawenterprises.brief4ijidea.plugin
+package net.ddns.rkdawenterprises.brief4ijidea
 
 import com.intellij.remoterobot.RemoteRobot
 import com.intellij.remoterobot.fixtures.CommonContainerFixture
@@ -16,38 +32,38 @@ import com.intellij.remoterobot.utils.keyboard
 import com.intellij.remoterobot.utils.waitFor
 import net.ddns.rkdawenterprises.brief4ijidea.Column_marking_component.Column_mode_block_data
 import net.ddns.rkdawenterprises.brief4ijidea.Column_marking_component.Column_mode_block_data.deserialize_from_JSON
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.pages.IdeaFrame
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.pages.actionMenu
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.pages.actionMenuItem
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.pages.dialog
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.pages.idea
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.pages.welcomeFrame
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.Column_target
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.Remote_robot_client
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.click_on_status_icon_settings
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.click_path
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.close_all_tabs
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.close_tip_of_the_day
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.escape
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_block
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_caret_logical_position
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_caret_visual_position
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_clipboard_text
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_current_line_number
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_delete_to_word_boundry_range
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_end_offset
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_line
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_line_length
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_line_number
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_lines
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_start_offset
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_visible_area_bottom_offset_line
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_visible_area_left_offset_of_current_line
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_visible_area_right_visual_position_of_current_line
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.get_visible_area_top_offset_line
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.move_to_line
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.scroll_to_line
-import net.ddns.rkdawenterprises.brief4ijidea.plugin.utils.tree_fixtures
+import net.ddns.rkdawenterprises.brief4ijidea.pages.IdeaFrame
+import net.ddns.rkdawenterprises.brief4ijidea.pages.actionMenu
+import net.ddns.rkdawenterprises.brief4ijidea.pages.actionMenuItem
+import net.ddns.rkdawenterprises.brief4ijidea.pages.dialog
+import net.ddns.rkdawenterprises.brief4ijidea.pages.idea
+import net.ddns.rkdawenterprises.brief4ijidea.pages.welcomeFrame
+import net.ddns.rkdawenterprises.brief4ijidea.utils.Column_target
+import net.ddns.rkdawenterprises.brief4ijidea.utils.Remote_robot_client
+import net.ddns.rkdawenterprises.brief4ijidea.utils.click_on_status_icon_settings
+import net.ddns.rkdawenterprises.brief4ijidea.utils.click_path
+import net.ddns.rkdawenterprises.brief4ijidea.utils.close_all_tabs
+import net.ddns.rkdawenterprises.brief4ijidea.utils.close_tip_of_the_day
+import net.ddns.rkdawenterprises.brief4ijidea.utils.escape
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_block
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_caret_logical_position
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_caret_visual_position
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_clipboard_text
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_current_line_number
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_delete_to_word_boundry_range
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_end_offset
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_line
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_line_length
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_line_number
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_lines
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_start_offset
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_visible_area_bottom_offset_line
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_visible_area_left_offset_of_current_line
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_visible_area_right_visual_position_of_current_line
+import net.ddns.rkdawenterprises.brief4ijidea.utils.get_visible_area_top_offset_line
+import net.ddns.rkdawenterprises.brief4ijidea.utils.move_to_line
+import net.ddns.rkdawenterprises.brief4ijidea.utils.scroll_to_line
+import net.ddns.rkdawenterprises.brief4ijidea.utils.tree_fixtures
 import org.apache.commons.lang.StringUtils
 import org.assertj.swing.core.MouseButton
 import org.junit.jupiter.api.Test
@@ -62,7 +78,7 @@ class Main_test
     fun main_test(remote_robot: RemoteRobot) = with(remote_robot)
     {
         // If IDE is open and project/file are set up, then comment this line out to speed iterations.
-//        ide_setup()
+        ide_setup()
 
         idea {
             test_commands()
@@ -143,7 +159,7 @@ class Main_test
 
                 editor.insertTextAtLine(0,
                                         0,
-                                        Test_data.java_example.trimIndent()
+                                        net.ddns.rkdawenterprises.brief4ijidea.Test_data.java_example.trimIndent()
                                             .escape())
             }
         }
@@ -153,30 +169,30 @@ class Main_test
     {
         step("Test the commands") {
             // TODO: Prompt user to close browser.
-//            test_help_menu_command()
-//            test_quick_java_doc_command()
-//            test_undo_redo_commands()
-//            test_change_output_file_command()
-//            test_beginning_of_line_command()
-//            test_end_of_line_command()
-//            test_top_of_buffer_command()
-//            test_end_of_buffer_command()
-//            test_top_of_window_command()
-//            test_end_of_window_command()
-//            test_left_side_of_window_command()
-//            test_right_side_of_window_command()
-//            test_scroll_buffer_down_in_window_command()
-//            test_go_to_line_command()
-//            test_delete_line_command()
-//            test_delete_next_word_command()
-//            test_delete_previous_word_command()
-//            test_delete_to_beginning_of_line_command()
-//            test_delete_to_end_of_line_command()
-//            test_insert_mode_toggle_command()
-//            test_open_line_command()
-//            test_mark_command()
-//            test_line_mark_command()
-//            test_column_mark_command()
+            test_help_menu_command()
+            test_quick_java_doc_command()
+            test_undo_redo_commands()
+            test_change_output_file_command()
+            test_beginning_of_line_command()
+            test_end_of_line_command()
+            test_top_of_buffer_command()
+            test_end_of_buffer_command()
+            test_top_of_window_command()
+            test_end_of_window_command()
+            test_left_side_of_window_command()
+            test_right_side_of_window_command()
+            test_scroll_buffer_down_in_window_command()
+            test_go_to_line_command()
+            test_delete_line_command()
+            test_delete_next_word_command()
+            test_delete_previous_word_command()
+            test_delete_to_beginning_of_line_command()
+            test_delete_to_end_of_line_command()
+            test_insert_mode_toggle_command()
+            test_open_line_command()
+            test_mark_command()
+            test_line_mark_command()
+            test_column_mark_command()
             test_drop_bookmark_10_command()
             test_paste_from_history_command()
             test_line_to_top_of_window_command()

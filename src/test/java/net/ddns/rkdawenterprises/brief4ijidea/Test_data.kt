@@ -1,6 +1,6 @@
 @file:Suppress("ClassName")
 
-package net.ddns.rkdawenterprises.brief4ijidea.plugin
+package net.ddns.rkdawenterprises.brief4ijidea
 
 object Test_data
 {
