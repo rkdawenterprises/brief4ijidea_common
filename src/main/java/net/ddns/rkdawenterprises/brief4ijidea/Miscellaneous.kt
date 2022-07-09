@@ -27,18 +27,17 @@ package net.ddns.rkdawenterprises.brief4ijidea
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.actionSystem.ex.ActionUtil
+import com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAwareWithCallbacks
 import com.intellij.openapi.actionSystem.impl.ActionManagerImpl
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.command.undo.UndoManager
 import com.intellij.openapi.editor.Editor
-import com.intellij.openapi.editor.EditorCoreUtil.isTrueSmoothScrollingEnabled
 import com.intellij.openapi.editor.LogicalPosition
 import com.intellij.openapi.project.Project
-import com.intellij.openapi.ui.DoNotAskOption
-import com.intellij.openapi.ui.messages.MessagesService
+import com.intellij.openapi.ui.DialogWrapper
+import com.intellij.openapi.ui.Messages
+import com.intellij.util.SystemProperties.isTrueSmoothScrollingEnabled
 import com.intellij.util.ui.UIUtil
-import java.awt.Component
 import java.awt.Rectangle
 import java.util.*
 import javax.swing.Icon
@@ -55,8 +54,8 @@ fun virtual_space_setting_warning(editor: Editor)
             ApplicationManager.getApplication()
                 .invokeLater {
                     warning_message("Change Settings for this Command",
-                                    Messages.message("you.must.enable.settings.editor.general.virtual.space.after.the.end.of.line.for.some.commands.right.side.of.window.and.column.marking.mode.to.work.properly"),
-                                    object : DoNotAskOption.Adapter()
+                                    Localized_messages.message("you.must.enable.settings.editor.general.virtual.space.after.the.end.of.line.for.some.commands.right.side.of.window.and.column.marking.mode.to.work.properly"),
+                                    object : DialogWrapper.DoNotAskOption.Adapter()
                                     {
                                         /**
                                          * Save the state of the checkbox in the settings, or perform some other related action.
@@ -93,7 +92,7 @@ fun virtual_space_setting_warning(editor: Editor)
 
 fun warning_message(title: String?,
                     message: String,
-                    option: DoNotAskOption.Adapter? = null): String?
+                    option: DialogWrapper.DoNotAskOption.Adapter? = null): String?
 {
     val button_name = "OK";
 
@@ -111,7 +110,7 @@ class Message internal constructor(private val title: String?,
                                    private val message: String)
 {
     private var m_icon: Icon? = null;
-    private var m_do_not_ask_option: DoNotAskOption? = null;
+    private var m_do_not_ask_option: DialogWrapper.DoNotAskOption? = null;
     private lateinit var m_buttons: List<String>;
     private var m_default_button_name: String? = null;
     private var m_focused_button_name: String? = null;
@@ -128,7 +127,7 @@ class Message internal constructor(private val title: String?,
         return this;
     }
 
-    fun do_not_ask(option: DoNotAskOption.Adapter?): Message
+    fun do_not_ask(option: DialogWrapper.DoNotAskOption.Adapter?): Message
     {
         m_do_not_ask_option = option;
         return this;
@@ -152,23 +151,17 @@ class Message internal constructor(private val title: String?,
         return this;
     }
 
-    fun show(project: Project? = null,
-             parent_component: Component? = null): String?
+    fun show(project: Project? = null): String?
     {
         val options = m_buttons.toTypedArray();
         val default_option_index = m_buttons.indexOf(m_default_button_name);
-        val focused_option_index = m_buttons.indexOf(m_focused_button_name);
-        val result = MessagesService.getInstance()
-            .showMessageDialog(project = project,
-                               parentComponent = parent_component,
-                               message = message,
-                               title = title,
-                               options = options,
-                               defaultOptionIndex = default_option_index,
-                               focusedOptionIndex = focused_option_index,
-                               icon = m_icon,
-                               doNotAskOption = m_do_not_ask_option,
-                               alwaysUseIdeaUI = true);
+        val result = Messages.showIdeaMessageDialog(project,
+                                                    message,
+                                                    title,
+                                                    options,
+                                                    default_option_index,
+                                                    m_icon,
+                                                    m_do_not_ask_option);
 
         return if(result < 0) null else m_buttons[result];
     }
@@ -227,25 +220,28 @@ fun do_action(action_ID: String,
 {
     val action_manager_ex = ActionManagerImpl.getInstanceEx();
     val action = action_manager_ex.getAction(action_ID);
-    ActionUtil.performActionDumbAwareWithCallbacks(action,
-                                                   an_action_event);
+    performActionDumbAwareWithCallbacks(action,
+                                        an_action_event,
+                                        an_action_event.dataContext);
 }
 
 fun do_action(action_ID: String,
               an_action_event: AnActionEvent,
               an_action: AnAction)
 {
-    if(!should_promote(an_action, an_action_event.dataContext)) return;
+    if(!should_promote(an_action,
+                       an_action_event.dataContext)) return;
     val action_manager_ex = ActionManagerImpl.getInstanceEx();
     val action = action_manager_ex.getAction(action_ID);
 
-    ActionUtil.performActionDumbAwareWithCallbacks(action,
-                                                   an_action_event);
+    performActionDumbAwareWithCallbacks(action,
+                                        an_action_event,
+                                        an_action_event.dataContext);
 }
 
 fun get_undo_manager(project: Project?): UndoManager
 {
-    return if(project != null && !project.isDefault) UndoManager.getInstance(project) else UndoManager.getGlobalInstance();
+    return if((project != null) && !project.isDefault) UndoManager.getInstance(project) else UndoManager.getGlobalInstance();
 }
 
 fun stop_all_marking_modes(editor: Editor,

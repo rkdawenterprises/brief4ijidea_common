@@ -316,7 +316,7 @@ public class State_component
                 }
                 else
                 {
-                    bar.setInfo( Messages.message( "status.bar.text.brief", message ) );
+                    bar.setInfo( Localized_messages.message( "status.bar.text.brief", message ) );
                 }
             }
         }

@@ -83,7 +83,7 @@ class Status_bar_document_information_factory : StatusBarWidgetFactory
     {
         @NonNls
         const val ID = "Brief4ijidea_status_bar_document_information_factory_ID"
-        val DISPLAY_NAME = Messages.message("document.information")
+        val DISPLAY_NAME = Localized_messages.message("document.information")
 
         @JvmStatic
         fun update_widget()
@@ -243,7 +243,7 @@ class Status_bar_document_information_factory : StatusBarWidgetFactory
 
         companion object
         {
-            val s_default_text = Messages.message("l.c.o")
+            val s_default_text = Localized_messages.message("l.c.o")
         }
 
         private val m_caret_listener = object : CaretListener

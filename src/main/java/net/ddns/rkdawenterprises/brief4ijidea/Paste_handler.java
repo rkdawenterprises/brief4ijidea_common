@@ -38,8 +38,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.util.Producer;
-import com.intellij.util.SlowOperations;
 import com.intellij.util.text.CharArrayUtil;
+import net.ddns.rkdawenterprises.brief4ijidea.compatibility.TypingActionsExtension;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -161,10 +161,10 @@ public class Paste_handler
     private static class ProcessorAndData<Data extends TextBlockTransferableData>
     {
         final CopyPastePostProcessor<Data> processor;
-        final @NotNull List<? extends Data> data;
+        final @NotNull List<Data> data;
 
         private ProcessorAndData( @NotNull CopyPastePostProcessor<Data> processor,
-                                  @NotNull List<? extends Data> data )
+                                  @NotNull List<Data> data )
         {
             this.processor = processor;
             this.data = data;
@@ -174,7 +174,7 @@ public class Paste_handler
                       @NotNull Editor editor,
                       @NotNull RangeMarker bounds,
                       int caretOffset,
-                      @NotNull Ref<? super Boolean> skipIndentation )
+                      @NotNull Ref<Boolean> skipIndentation )
         {
             processor.processTransferableData( project,
                                                editor,
@@ -313,10 +313,10 @@ public class Paste_handler
         ApplicationManager.getApplication()
                           .runWriteAction( () ->
                                            {
-                                               EditorModificationUtilEx.insertStringAtCaret( editor,
-                                                                                             _text,
-                                                                                             false,
-                                                                                             true );
+                                               EditorModificationUtil.insertStringAtCaret( editor,
+                                                                                           _text,
+                                                                                           false,
+                                                                                           true );
                                                if( !project.isDisposed() )
                                                {
                                                    ( (UndoManagerImpl)UndoManager.getInstance( project ) ).addDocumentAsAffected( editor.getDocument() );
@@ -345,14 +345,14 @@ public class Paste_handler
         final Ref<Boolean> skipIndentation = new Ref<>( pastedTextWasChanged ? Boolean.FALSE : null );
         for( ProcessorAndData<?> data : extraData )
         {
-            SlowOperations.allowSlowOperations( () ->
-                                                {
-                                                    data.process( project,
-                                                                  editor,
-                                                                  bounds,
-                                                                  caretOffset,
-                                                                  skipIndentation );
-                                                } );
+//            SlowOperations.allowSlowOperations( () ->
+//                                                {
+            data.process( project,
+                          editor,
+                          bounds,
+                          caretOffset,
+                          skipIndentation );
+//                                                } );
         }
 
         boolean pastedTextContainsWhiteSpacesOnly =

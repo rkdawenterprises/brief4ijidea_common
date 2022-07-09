@@ -37,7 +37,7 @@ import com.intellij.openapi.wm.IdeFocusManager
 import com.intellij.psi.PsiFile
 import com.intellij.util.ui.JBUI
 import net.ddns.rkdawenterprises.brief4ijidea.Key_event_to_string.Companion.to_string
-import net.ddns.rkdawenterprises.brief4ijidea.Messages
+import net.ddns.rkdawenterprises.brief4ijidea.Localized_messages
 import net.ddns.rkdawenterprises.brief4ijidea.State_component
 import net.ddns.rkdawenterprises.brief4ijidea.stop_all_marking_modes
 import org.jetbrains.annotations.NonNls
@@ -593,10 +593,10 @@ println("backspace)")
 
     companion object
     {
-        val m_title = Messages.message("repeat.string.or.command");
-        val m_command_prompt_format = Messages.message("repeat.count.d.s");
-        val m_command_prompt_initial_instructions = Messages.message("modify.count.then.right.arrow");
-        val m_command_prompt_final_instructions = Messages.message("type.command.or.string");
+        val m_title = Localized_messages.message("repeat.string.or.command");
+        val m_command_prompt_format = Localized_messages.message("repeat.count.d.s");
+        val m_command_prompt_initial_instructions = Localized_messages.message("modify.count.then.right.arrow");
+        val m_command_prompt_final_instructions = Localized_messages.message("type.command.or.string");
         const val MAX_COMMAND_COUNT = 1024;
     }
 }

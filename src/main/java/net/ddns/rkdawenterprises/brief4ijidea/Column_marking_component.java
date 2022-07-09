@@ -101,7 +101,7 @@ public class Column_marking_component
 
         s_is_column_marking_mode = true;
 
-        State_component.status_bar_message( Messages.message( "column.marking.mode" ) );
+        State_component.status_bar_message( Localized_messages.message( "column.marking.mode" ) );
 
         s_column_selection_origin = editor.getCaretModel()
                                           .getLogicalPosition();
@@ -497,7 +497,7 @@ public class Column_marking_component
     {
         @Nullable Project project = editor.getProject();
         WriteCommandAction.runWriteCommandAction( project,
-                                                  Messages.message("command.name.delete.column.selection"),
+                                                  Localized_messages.message( "command.name.delete.column.selection" ),
                                                   null,
                                                   () -> delete_selection_write_action( editor ),
                                                   project != null ? ( PsiDocumentManager.getInstance( project )
@@ -541,7 +541,7 @@ public class Column_marking_component
     {
         @Nullable Project project = editor.getProject();
         WriteCommandAction.runWriteCommandAction( project,
-                                                  Messages.message("command.name.cut.column.selection"),
+                                                  Localized_messages.message( "command.name.cut.column.selection" ),
                                                   null,
                                                   () ->
                                                   {

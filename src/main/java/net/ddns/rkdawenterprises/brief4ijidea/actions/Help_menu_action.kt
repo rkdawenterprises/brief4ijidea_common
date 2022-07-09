@@ -23,9 +23,8 @@
 package net.ddns.rkdawenterprises.brief4ijidea.actions
 
 import com.intellij.openapi.actionSystem.AnActionEvent
-import net.ddns.rkdawenterprises.brief4ijidea.Actions_component
 import com.intellij.ide.BrowserUtil
-import net.ddns.rkdawenterprises.brief4ijidea.Messages
+import net.ddns.rkdawenterprises.brief4ijidea.Localized_messages
 
 class Help_menu_action(text: String?,
                        description: String?) : Plugin_action(text,
@@ -38,6 +37,6 @@ class Help_menu_action(text: String?,
      */
     override fun actionPerformed(e: AnActionEvent)
     {
-        BrowserUtil.browse(Messages.message("help.menu.documentation.URI"));
+        BrowserUtil.browse(Localized_messages.message("help.menu.documentation.URI"));
     }
 }

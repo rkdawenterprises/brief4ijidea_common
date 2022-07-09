@@ -73,9 +73,9 @@ public class Exit_action
 
         if( is_modified )
         {
-            String message_file_name = ( file_name != null ? file_name : net.ddns.rkdawenterprises.brief4ijidea.Messages.message( "dialog.message.file" ) );
-            if( Messages.showYesNoDialog( net.ddns.rkdawenterprises.brief4ijidea.Messages.message( "dialog.message.write.changes.to.before.closing.if.you.want.them.externally.accessible", message_file_name ),
-                                          net.ddns.rkdawenterprises.brief4ijidea.Messages.message("dialog.title.write.changes"),
+            String message_file_name = ( file_name != null ? file_name : net.ddns.rkdawenterprises.brief4ijidea.Localized_messages.message( "dialog.message.file" ) );
+            if( Messages.showYesNoDialog( net.ddns.rkdawenterprises.brief4ijidea.Localized_messages.message( "dialog.message.write.changes.to.before.closing.if.you.want.them.externally.accessible", message_file_name ),
+                                          net.ddns.rkdawenterprises.brief4ijidea.Localized_messages.message( "dialog.title.write.changes" ),
                                           Messages.getQuestionIcon() ) == Messages.YES )
             {
                 do_action( "SaveDocument", e );

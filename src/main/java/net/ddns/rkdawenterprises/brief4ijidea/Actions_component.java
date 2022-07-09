@@ -63,7 +63,7 @@ public class Actions_component
         if( State_component.get_instance()
                            .get_check_active_keymap_is_brief() )
         {
-            final KeymapImpl brief_keymap = (KeymapImpl)keymap_manager.getKeymap( Messages.message( "brief" ) );
+            final KeymapImpl brief_keymap = (KeymapImpl)keymap_manager.getKeymap( Localized_messages.message( "brief" ) );
             if( brief_keymap != null )
             {
                 brief_keymap.setCanModify( true );
@@ -71,7 +71,7 @@ public class Actions_component
 //                fix_keymap_conflicts( s_keymap_file_parsed,
 //                                      brief_keymap );
 
-                State_component.status_bar_message( Messages.message( "keymap.set.to.brief" ) );
+                State_component.status_bar_message( Localized_messages.message( "keymap.set.to.brief" ) );
             }
             else
             {
@@ -91,7 +91,7 @@ public class Actions_component
 
             KeymapImpl default_keymap;
 
-            if( ( previous_keymap_name == null ) || previous_keymap_name.equals( Messages.message( "brief" ) ) )
+            if( ( previous_keymap_name == null ) || previous_keymap_name.equals( Localized_messages.message( "brief" ) ) )
             {
                 default_keymap = (KeymapImpl)keymap_manager.getKeymap( DefaultKeymap.getInstance()
                                                                                     .getDefaultKeymapName() );
@@ -104,7 +104,7 @@ public class Actions_component
             if( default_keymap != null )
             {
                 keymap_manager.setActiveKeymap( default_keymap );
-                State_component.status_bar_message( Messages.message( "keymap.restored.to.0", default_keymap.getName() ) );
+                State_component.status_bar_message( Localized_messages.message( "keymap.restored.to.0", default_keymap.getName() ) );
             }
         }
 

@@ -23,7 +23,7 @@ plugins {
     // Java support
     id("java")
     // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.7.0"
+    id("org.jetbrains.kotlin.jvm") version "1.6.10"
     // Gradle IntelliJ Plugin
     id("org.jetbrains.intellij") version "1.4.0"
     // Gradle Changelog Plugin
@@ -61,6 +61,7 @@ intellij {
 
     // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
     plugins.set(properties("platformPlugins").split(',').map(String::trim).filter(String::isNotEmpty))
+    updateSinceUntilBuild.set(false)
 }
 
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
@@ -136,8 +137,8 @@ tasks {
     }
 
     signPlugin {
-        certificateChain.set(File(System.getenv("CERTIFICATE_CHAIN") ?: "/run/media/ralph/AD38-6FA3/.keystore/intellij_marketplace/chain.crt").readText(Charsets.UTF_8))
-        privateKey.set(File(System.getenv("PRIVATE_KEY") ?: "/run/media/ralph/AD38-6FA3/.keystore/intellij_marketplace/private.pem").readText(Charsets.UTF_8))
+//        certificateChain.set(File(System.getenv("CERTIFICATE_CHAIN") ?: "/run/media/ralph/AD38-6FA3/.keystore/intellij_marketplace/chain.crt").readText(Charsets.UTF_8))
+//        privateKey.set(File(System.getenv("PRIVATE_KEY") ?: "/run/media/ralph/AD38-6FA3/.keystore/intellij_marketplace/private.pem").readText(Charsets.UTF_8))
         password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
     }
 

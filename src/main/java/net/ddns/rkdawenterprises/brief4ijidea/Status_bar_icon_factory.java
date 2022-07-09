@@ -52,7 +52,7 @@ public class Status_bar_icon_factory
         implements StatusBarWidgetFactory
 {
     public static final @NonNls String ID = "Brief4ijidea_status_bar_brief_for_ij_idea_factory_ID";
-    public static final String DISPLAY_NAME = Messages.message( "action.brief.editor.emulator.text" );
+    public static final String DISPLAY_NAME = Localized_messages.message( "action.brief.editor.emulator.text" );
 
     /**
      * @return Widget identifier. Used to store visibility settings.
@@ -267,13 +267,13 @@ public class Status_bar_icon_factory
                                                             .get_initialized() )
             {
                 return IconManager.getInstance()
-                                  .getIcon( Messages.message( "icons.brief4ijidea.svg" ),
+                                  .getIcon( Localized_messages.message( "icons.brief4ijidea.svg" ),
                                             Status_bar_widget.class );
             }
             else
             {
                 return IconManager.getInstance()
-                                  .getIcon( Messages.message( "icons.brief4ijidea.disabled.svg" ),
+                                  .getIcon( Localized_messages.message( "icons.brief4ijidea.disabled.svg" ),
                                             Status_bar_widget.class );
             }
         }
@@ -281,7 +281,7 @@ public class Status_bar_icon_factory
         @Override
         public @Nullable String getTooltipText()
         {
-            return Messages.message( "tooltip.in", DISPLAY_NAME, m_project.getName() );
+            return Localized_messages.message( "tooltip.in", DISPLAY_NAME, m_project.getName() );
         }
 
         @Override
@@ -311,7 +311,7 @@ public class Status_bar_icon_factory
                                                     JBPopupFactory.ActionSelectionAid.SPEEDSEARCH,
                                                     false,
                                                     ActionPlaces.POPUP );
-            String ad_text = Messages.message( "popup.advertisement.version", State_component.get_version() );
+            String ad_text = Localized_messages.message( "popup.advertisement.version", State_component.get_version() );
             popup.setAdText( ad_text,
                              SwingConstants.CENTER );
 
@@ -325,15 +325,15 @@ public class Status_bar_icon_factory
 
             action_group_top.add( ActionManager.getInstance()
                                                .getAction( "net.ddns.rkdawenterprises.brief4ijidea.actions.Enabled_toggle_action" ) );
-            action_group_top.add( new Open_settings_action( Messages.message( "settings" ) ) );
+            action_group_top.add( new Open_settings_action( Localized_messages.message( "settings" ) ) );
             action_group_top.addSeparator();
             // URI taken from keymap file.
-            action_group_top.add( new Browse_link_action( Messages.message( "submit.issue" ),
-                                                          Messages.message("status.bar.issues.URI"),
+            action_group_top.add( new Browse_link_action( Localized_messages.message( "submit.issue" ),
+                                                          Localized_messages.message( "status.bar.issues.URI" ),
                                                           AllIcons.Vcs.Vendors.Github ) );
             // URI taken from keymap file.
-            action_group_top.add( new Browse_link_action( Messages.message( "repository" ),
-                                                          Messages.message("status.bar.repository.URI"),
+            action_group_top.add( new Browse_link_action( Localized_messages.message( "repository" ),
+                                                          Localized_messages.message( "status.bar.repository.URI" ),
                                                           AllIcons.Vcs.Vendors.Github ) );
             return action_group_top;
         }

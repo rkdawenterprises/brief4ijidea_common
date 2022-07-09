@@ -28,27 +28,27 @@ public class Settings_UI_component
 {
     private final JPanel myMainPanel;
 
-    private final JBCheckBox m_enabled = new JBCheckBox( Messages.message( "checkbox.enable.or.disable.plugin" ) );
-    private final JBCheckBox m_show_icon_in_status_bar = new JBCheckBox( Messages.message( "checkbox.show.or.hide.status.bar.widget" ) );
-    private final JBCheckBox m_paste_lines_at_home = new JBCheckBox( Messages.message( "checkbox.paste.whole.lines.at.home.position" ) );
-    private final JBCheckBox m_use_brief_home = new JBCheckBox( Messages.message( "checkbox.use.brief.home.key.functionality" ) );
-    private final JBCheckBox m_check_active_keymap_is_brief = new JBCheckBox( Messages.message( "checkbox.startup.check.active.keymap.brief" ) );
-    private final JBCheckBox m_exit_only_closes_editor = new JBCheckBox( Messages.message( "checkbox.exit.command.only.closes.active.editor" ) );
-    private final JBCheckBox m_write_all_and_exit_closes_IDEA = new JBCheckBox( Messages.message( "checkbox.write.all.exit.command.closes.idea" ) );
-    private final JBCheckBox m_do_not_show_virtual_space_setting_dialog = new JBCheckBox( Messages.message( "checkbox.do.not.show.virtual.space.setting.dialog.again" ) );
-    private final JBCheckBox m_show_document_information = new JBCheckBox( Messages.message( "checkbox.show.document.information.in.status.bar" ) );
+    private final JBCheckBox m_enabled = new JBCheckBox( Localized_messages.message( "checkbox.enable.or.disable.plugin" ) );
+    private final JBCheckBox m_show_icon_in_status_bar = new JBCheckBox( Localized_messages.message( "checkbox.show.or.hide.status.bar.widget" ) );
+    private final JBCheckBox m_paste_lines_at_home = new JBCheckBox( Localized_messages.message( "checkbox.paste.whole.lines.at.home.position" ) );
+    private final JBCheckBox m_use_brief_home = new JBCheckBox( Localized_messages.message( "checkbox.use.brief.home.key.functionality" ) );
+    private final JBCheckBox m_check_active_keymap_is_brief = new JBCheckBox( Localized_messages.message( "checkbox.startup.check.active.keymap.brief" ) );
+    private final JBCheckBox m_exit_only_closes_editor = new JBCheckBox( Localized_messages.message( "checkbox.exit.command.only.closes.active.editor" ) );
+    private final JBCheckBox m_write_all_and_exit_closes_IDEA = new JBCheckBox( Localized_messages.message( "checkbox.write.all.exit.command.closes.idea" ) );
+    private final JBCheckBox m_do_not_show_virtual_space_setting_dialog = new JBCheckBox( Localized_messages.message( "checkbox.do.not.show.virtual.space.setting.dialog.again" ) );
+    private final JBCheckBox m_show_document_information = new JBCheckBox( Localized_messages.message( "checkbox.show.document.information.in.status.bar" ) );
 
     public Settings_UI_component()
     {
-        m_enabled.setToolTipText( Messages.message( "enable.the.brief.editor.emulator.functionality.uncheck.to.disable.the.plugin" ) );
-        m_show_icon_in_status_bar.setToolTipText( Messages.message( "shows.or.hides.the.plugin.widget.icon.in.the.status.bar.uncheck.to.hide.the.status.bar.icon" ) );
-        m_paste_lines_at_home.setToolTipText( Messages.message( "if.the.item.in.the.scrap.history.buffer.being.pasted.is.a.full.line.ends.with.a.line.termination.then.paste.it.at.the.beginning.of.the.current.line.uncheck.to.paste.at.the.current.cursor.location" ) );
-        m_use_brief_home.setToolTipText( Messages.message( "use.the.home.key.functionality.as.documented.in.brief.this.disables.the.normal.smart.home.functionality.uncheck.to.restore.smart.home.key.functionality.but.still.maintain.brief.home.home.home.key.functionality" ) );
-        m_check_active_keymap_is_brief.setToolTipText( Messages.message( "initial.check.for.active.keymap.is.set.to.use.the.included.brief.keymap.at.startup.uncheck.this.if.you.modify.the.keymap.which.makes.a.copy.of.the.default.brief.keymap.because.startup.will.configure.default.brief.keymap.as.active.keymap.if.this.is.checked" ) );
-        m_exit_only_closes_editor.setToolTipText( Messages.message( "exit.command.will.close.the.currently.active.editor.not.the.idea.original.brief.functionality.would.close.the.application.uncheck.this.if.you.want.the.original.functionality" ) );
-        m_write_all_and_exit_closes_IDEA.setToolTipText( Messages.message( "write.all.and.exit.command.will.close.the.idea.this.is.original.brief.functionality.uncheck.this.if.you.want.to.close.only.the.editors.but.keep.the.idea.running" ) );
-        m_do_not_show_virtual_space_setting_dialog.setToolTipText( Messages.message( "disables.showing.of.the.virtual.space.setting.dialog.again.when.initiating.the.right.side.of.window.action.uncheck.if.you.want.to.see.this.dialog.again" ) );
-        m_show_document_information.setToolTipText( Messages.message( "shows.additional.document.information.offsets.lengths.in.the.status.bar.uncheck.if.you.don.t.want.to.see.extra.document.information.in.the.status.bar" ) );
+        m_enabled.setToolTipText( Localized_messages.message( "enable.the.brief.editor.emulator.functionality.uncheck.to.disable.the.plugin" ) );
+        m_show_icon_in_status_bar.setToolTipText( Localized_messages.message( "shows.or.hides.the.plugin.widget.icon.in.the.status.bar.uncheck.to.hide.the.status.bar.icon" ) );
+        m_paste_lines_at_home.setToolTipText( Localized_messages.message( "if.the.item.in.the.scrap.history.buffer.being.pasted.is.a.full.line.ends.with.a.line.termination.then.paste.it.at.the.beginning.of.the.current.line.uncheck.to.paste.at.the.current.cursor.location" ) );
+        m_use_brief_home.setToolTipText( Localized_messages.message( "use.the.home.key.functionality.as.documented.in.brief.this.disables.the.normal.smart.home.functionality.uncheck.to.restore.smart.home.key.functionality.but.still.maintain.brief.home.home.home.key.functionality" ) );
+        m_check_active_keymap_is_brief.setToolTipText( Localized_messages.message( "initial.check.for.active.keymap.is.set.to.use.the.included.brief.keymap.at.startup.uncheck.this.if.you.modify.the.keymap.which.makes.a.copy.of.the.default.brief.keymap.because.startup.will.configure.default.brief.keymap.as.active.keymap.if.this.is.checked" ) );
+        m_exit_only_closes_editor.setToolTipText( Localized_messages.message( "exit.command.will.close.the.currently.active.editor.not.the.idea.original.brief.functionality.would.close.the.application.uncheck.this.if.you.want.the.original.functionality" ) );
+        m_write_all_and_exit_closes_IDEA.setToolTipText( Localized_messages.message( "write.all.and.exit.command.will.close.the.idea.this.is.original.brief.functionality.uncheck.this.if.you.want.to.close.only.the.editors.but.keep.the.idea.running" ) );
+        m_do_not_show_virtual_space_setting_dialog.setToolTipText( Localized_messages.message( "disables.showing.of.the.virtual.space.setting.dialog.again.when.initiating.the.right.side.of.window.action.uncheck.if.you.want.to.see.this.dialog.again" ) );
+        m_show_document_information.setToolTipText( Localized_messages.message( "shows.additional.document.information.offsets.lengths.in.the.status.bar.uncheck.if.you.don.t.want.to.see.extra.document.information.in.the.status.bar" ) );
 
         myMainPanel = FormBuilder.createFormBuilder()
                                  .addComponent( m_enabled,

@@ -21,11 +21,11 @@ package net.ddns.rkdawenterprises.brief4ijidea.actions
 
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.project.DumbAwareToggleAction
-import net.ddns.rkdawenterprises.brief4ijidea.Messages
+import net.ddns.rkdawenterprises.brief4ijidea.Localized_messages
 import net.ddns.rkdawenterprises.brief4ijidea.State_component
 
-class Enabled_toggle_action : DumbAwareToggleAction(Messages.message("action.brief.editor.emulator.text"),
-                                                    Messages.message("action.enable.or.disable.brief.editor.emulation.plugin.description"),
+class Enabled_toggle_action : DumbAwareToggleAction(Localized_messages.message("action.brief.editor.emulator.text"),
+                                                    Localized_messages.message("action.enable.or.disable.brief.editor.emulation.plugin.description"),
                                                     null)
 {
     /**

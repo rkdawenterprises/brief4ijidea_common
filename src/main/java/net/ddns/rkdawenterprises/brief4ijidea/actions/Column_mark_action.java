@@ -21,7 +21,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
-import net.ddns.rkdawenterprises.brief4ijidea.Messages;
+import net.ddns.rkdawenterprises.brief4ijidea.Localized_messages;
 import org.jetbrains.annotations.NotNull;
 
 import static net.ddns.rkdawenterprises.brief4ijidea.MiscellaneousKt.*;
@@ -52,7 +52,7 @@ public class Column_mark_action
         if( ( project == null ) || ( editor.getProject() == null ) )
         {
             warning_message( null,
-                             Messages.message( "column.marking.mode.currently.uses.highlightmanager.which.requires.a.project.to.obtain.an.instance" ),
+                             Localized_messages.message( "column.marking.mode.currently.uses.highlightmanager.which.requires.a.project.to.obtain.an.instance" ),
                              null );
             return;
         }

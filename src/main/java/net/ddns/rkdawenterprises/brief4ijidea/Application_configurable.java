@@ -17,8 +17,6 @@
 package net.ddns.rkdawenterprises.brief4ijidea;
 
 import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.util.NlsContexts;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -37,7 +35,7 @@ public class Application_configurable
     @Override
     public String getDisplayName()
     {
-        return Messages.message( "configurable.name.brief.editor.emulation.settings" );
+        return Localized_messages.message( "configurable.name.brief.editor.emulation.settings" );
     }
 
     /**

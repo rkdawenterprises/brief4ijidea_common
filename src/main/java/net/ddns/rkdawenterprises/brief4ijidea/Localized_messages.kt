@@ -25,9 +25,9 @@ import org.jetbrains.annotations.NonNls
 import org.jetbrains.annotations.PropertyKey
 
 @NonNls
-private const val BUNDLE = "messages.Messages"
+private const val BUNDLE = "messages.Localized_messages"
 
-object Messages : DynamicBundle(BUNDLE)
+object Localized_messages : DynamicBundle(BUNDLE)
 {
     @JvmStatic
     fun message(@PropertyKey(resourceBundle = BUNDLE) key: String,
