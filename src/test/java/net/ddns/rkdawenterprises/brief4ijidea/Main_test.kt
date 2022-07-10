@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 RKDAW Enterprises and Ralph Williamson
+ * Copyright (c) 2019-2022 RKDAW Enterprises and Ralph Williamson
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ package net.ddns.rkdawenterprises.brief4ijidea
 import com.intellij.remoterobot.RemoteRobot
 import com.intellij.remoterobot.fixtures.CommonContainerFixture
 import com.intellij.remoterobot.fixtures.ComponentFixture
-import com.intellij.remoterobot.fixtures.JTreeFixture
 import com.intellij.remoterobot.search.locators.byXpath
 import com.intellij.remoterobot.stepsProcessing.step
 import com.intellij.remoterobot.utils.keyboard
@@ -38,34 +37,9 @@ import net.ddns.rkdawenterprises.brief4ijidea.pages.actionMenuItem
 import net.ddns.rkdawenterprises.brief4ijidea.pages.dialog
 import net.ddns.rkdawenterprises.brief4ijidea.pages.idea
 import net.ddns.rkdawenterprises.brief4ijidea.pages.welcomeFrame
-import net.ddns.rkdawenterprises.brief4ijidea.utils.Column_target
-import net.ddns.rkdawenterprises.brief4ijidea.utils.Remote_robot_client
-import net.ddns.rkdawenterprises.brief4ijidea.utils.click_on_status_icon_settings
-import net.ddns.rkdawenterprises.brief4ijidea.utils.click_path
-import net.ddns.rkdawenterprises.brief4ijidea.utils.close_all_tabs
-import net.ddns.rkdawenterprises.brief4ijidea.utils.close_tip_of_the_day
-import net.ddns.rkdawenterprises.brief4ijidea.utils.escape
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_block
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_caret_logical_position
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_caret_visual_position
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_clipboard_text
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_current_line_number
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_delete_to_word_boundry_range
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_end_offset
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_line
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_line_length
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_line_number
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_lines
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_start_offset
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_visible_area_bottom_offset_line
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_visible_area_left_offset_of_current_line
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_visible_area_right_visual_position_of_current_line
-import net.ddns.rkdawenterprises.brief4ijidea.utils.get_visible_area_top_offset_line
-import net.ddns.rkdawenterprises.brief4ijidea.utils.move_to_line
-import net.ddns.rkdawenterprises.brief4ijidea.utils.scroll_to_line
-import net.ddns.rkdawenterprises.brief4ijidea.utils.tree_fixtures
 import org.apache.commons.lang.StringUtils
 import org.assertj.swing.core.MouseButton
+import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import java.awt.event.KeyEvent.*
@@ -77,7 +51,7 @@ class Main_test
     @Test
     fun main_test(remote_robot: RemoteRobot) = with(remote_robot)
     {
-        // If IDE is open and project/file are set up, then comment this line out to speed iterations.
+        // TODO: If developing/debugging tests and IDE is open and project/file are set up, then comment this line out to speed iterations.
         ide_setup()
 
         idea {
@@ -1318,40 +1292,40 @@ class Main_test
         }
     }
 
-    private fun IdeaFrame.test_quick_java_doc_command()
-    {
-        val text_editor_fixture = textEditor()
-        val editor_fixture = text_editor_fixture.editor
-
-        step("Command: Quick Java Doc. Description: Show contextual documentation popup.")
-        {
-            editor_fixture.scroll_to_line(42);
-            waitFor { editor_fixture.hasText("SuppressWarnings") }
-            editor_fixture.findText("SuppressWarnings")
-                .click()
-            editor_fixture.keyboard {
-                hotKey(VK_CONTROL,
-                       VK_H)
-            }
-
-            waitFor { heavyWeightWindows().size == 1 }
-            val all_text = heavyWeightWindows()[0].find(CommonContainerFixture::class.java,
-                                                        byXpath("//div[@class='DocumentationHintEditorPane']"),
-                                                        Duration.ofSeconds(5))
-                .findAllText()
-            var found_it = 0
-            for(i in all_text.indices)
-            {
-                if((found_it == 0) && all_text[i].text.contains("public")) found_it++;
-                if((found_it == 1) && all_text[i].text.contains("interface")) found_it++;
-                if((found_it == 2) && all_text[i].text.contains("SuppressWarnings")) found_it++;
-                if((found_it == 3) && all_text[i].text.contains("extends")) found_it++;
-                if((found_it == 4) && all_text[i].text.contains("annotation.Annotation")) found_it++;
-            }
-
-            assert(found_it == 5)
-        }
-    }
+//    private fun IdeaFrame.test_quick_java_doc_command()
+//    {
+//        val text_editor_fixture = textEditor()
+//        val editor_fixture = text_editor_fixture.editor
+//
+//        step("Command: Quick Java Doc. Description: Show contextual documentation popup.")
+//        {
+//            editor_fixture.scroll_to_line(42);
+//            waitFor { editor_fixture.hasText("SuppressWarnings") }
+//            editor_fixture.findText("SuppressWarnings")
+//                .click()
+//            editor_fixture.keyboard {
+//                hotKey(VK_CONTROL,
+//                       VK_H)
+//            }
+//
+//            waitFor { heavyWeightWindows().size == 1 }
+//            val all_text = heavyWeightWindows()[0].find(CommonContainerFixture::class.java,
+//                                                        byXpath("//div[@class='DocumentationHintEditorPane']"),
+//                                                        Duration.ofSeconds(5))
+//                .findAllText()
+//            var found_it = 0
+//            for(i in all_text.indices)
+//            {
+//                if((found_it == 0) && all_text[i].text.contains("public")) found_it++;
+//                if((found_it == 1) && all_text[i].text.contains("interface")) found_it++;
+//                if((found_it == 2) && all_text[i].text.contains("SuppressWarnings")) found_it++;
+//                if((found_it == 3) && all_text[i].text.contains("extends")) found_it++;
+//                if((found_it == 4) && all_text[i].text.contains("annotation.Annotation")) found_it++;
+//            }
+//
+//            assert(found_it == 5)
+//        }
+//    }
 
     private fun IdeaFrame.test_help_menu_command()
     {
@@ -1374,7 +1348,8 @@ class Main_test
         }
     }
 
-//    @AfterEach
+    // TODO: If developing/debugging tests, then comment this line out to speed iterations.
+    @AfterEach
     fun closeProject(remoteRobot: RemoteRobot) = with(remoteRobot) {
         idea {
             if(remoteRobot.isMac())

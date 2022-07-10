@@ -3,21 +3,17 @@
 <h1 style="color:#0000AA;padding-left:100px">Brief Editor Emulator for IntelliJ IDEA</h1>
 <br/>
 </div>
-
-<!-- TODO: Examples only. Needs cleanup. -->
-![Build](https://github.com/rkdawenterprises/brief4ijidea/workflows/Build/badge.svg)
+  
 [![Version](https://img.shields.io/jetbrains/plugin/v/net.ddns.rkdawenterprises.brief4ijidea.svg)](https://plugins.jetbrains.com/plugin/net.ddns.rkdawenterprises.brief4ijidea)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/net.ddns.rkdawenterprises.brief4ijidea.svg)](https://plugins.jetbrains.com/plugin/net.ddns.rkdawenterprises.brief4ijidea)
-[![Downloads][plugin-downloads-svg]][plugin-repo]
-[![Rating][plugin-rating-svg]][plugin-repo]
-[![Version][plugin-version-svg]][plugin-repo]
 
 <!-- Plugin description -->
 ## Brief Text Editor Emulator and Keymap for Intellij IDEA
 This IntelliJ IDEA extension adds key bindings and functionality that attempts to emulate many features of the original BRIEF MS-DOS application. Adds it's home-home-home and end-end-end functionality, line and column marking modes, single key cut, copy, and paste, clipboard swap, as well as most of the original keybindings.
 <!-- Plugin description end -->
-<p>Some history. BRIEF (Basic Re-configurable Interactive Editing Facility) was a popular programmer's text editor in the late 1980s and early 1990s. Developed by UnderWare Inc, it was quite powerful and feature rich for its time. For more information, see the Wikipedia page &quot;<a href="https://en.wikipedia.org/wiki/Brief_(text_editor)" target="_blank">Brief (text editor)</a>&quot;.</p>
-<p>Note! Plugin will not activate until indexing is finished!</p>
+Some history. BRIEF (Basic Re-configurable Interactive Editing Facility) was a popular programmer's text editor in the late 1980s and early 1990s. Developed by UnderWare Inc, it was quite powerful and feature rich for its time. For more information, see the Wikipedia page &quot;<a href="https://en.wikipedia.org/wiki/Brief_(text_editor)" target="_blank">Brief (text editor)</a>&quot; for more information.
+
+Note! Plugin will not activate until indexing is finished!
 
 ---
 ## Installation
@@ -34,11 +30,13 @@ This IntelliJ IDEA extension adds key bindings and functionality that attempts t
 
 ---
 ## Commands
-<p>The following are the key bindings and commands implemented by the plugin.</p>
-<p>Some Brief functionality is currently the Intellij IDEA default, or close enough.</p>
-<p>No intentional changes to mouse functionality.</p>
-<p>The commands may not work unless the caret is in an active "Editor Text Document". This is done so the extension won't interfere with existing functionality.</p>
-<p>You must enable <kbd>Settings</kbd> -> <kbd>Editor</kbd> -> <kbd>General</kbd> -> <kbd>Virtual Space</kbd> -> <kbd>After the end of line</kbd> for some commands to work properly.</p>
+The following are the key bindings and commands implemented by the plugin.
+
+Some Brief functionality is currently the Intellij IDEA default, or close enough.
+No intentional changes to mouse functionality.
+The commands may not work unless the caret is in an active "Editor Text Document". This is done so hopefully the extension won't interfere with existing functionality.
+
+You must enable <kbd>Settings</kbd> -> <kbd>Editor</kbd> -> <kbd>General</kbd> -> <kbd>Virtual Space</kbd> -> <kbd>After the end of line</kbd> for some commands to work properly.
 
 <table style="background-color:#F5FFFF">
     <caption style="color:#0000AA; background-color:#F5FFFF">Help and Undo/Redo</caption>
@@ -115,48 +113,48 @@ This IntelliJ IDEA extension adds key bindings and functionality that attempts t
     <tr><td>Shift + F6</td><td>Translate again</td><td>Translates (replaces) forwards using previous search/replace parameters. Only works if the search dialog is open.</td></tr>
     <tr><td>Ctrl + R</td><td>Repeat</td><td>!!!Not functional (WIP)!!! Opens the &quot;Repeat Dialog&quot;, then repeats the requested command, or inserts the requested char/string into the editor, the requested number of times. Not all commands are supported or work well. Actually accepts any &quot;non-printable&quot; key sequence, so not sure what works actually.</td></tr>
 </table>
-<div style="background-color:#F5FFFF">
-<h3 style="color:#0000AA">Notes<sup>*</sup></h3>
-<ul>
-<li>The extension may not work as well with line/code folding (not well tested). So best to unfold the area of the file you are working on if you want the commands to work as expected.</li>
-<li>I was only able to account for most Brief defined keystrokes affect in the marking modes. Turn off an active marking mode to use other commands. I couldn't find a way to generally monitor all keystrokes to affect/or disable an active marking mode as a result of a keystroke.</li>
-<li>Does not support multiple carets (not tested).</li>
-<li>Column marking mode is independent of, and does not work with IDEA Column Selection Mode. It creates a custom MIME type in the clipboard.</li>
-</ul>
-</div>
+
+---
+###Notes
+* The extension may not work as well with line/code folding (not well tested). So if there are issues, it's best to unfold
+the area of the file you are working on if you want the commands to work as expected.
+* I was only able to account for most Brief defined keystrokes affect in the marking modes. Turn off an active marking mode
+to use other commands. I couldn't find a way to generally monitor all keystrokes to affect/or disable an active marking mode
+as a result of a keystroke.
+* Does not support multiple carets (not tested).
+* Column marking mode is independent of, and does not work with IDEA Column Selection Mode. It creates a custom MIME type
+in the clipboard. Brief's column selection and paste is unique and superior to most implementations, IMHO. The paste
+relocates the cursor such that using the single key INS allows you to paste from the top to the bottom of the document
+by holding down the key.
 
 ---
 ## Contact/Bugs
-<p>Enter bugs at &quot;<a href=https://github.com/rkdawenterprises/brief4ijidea/issues target="_blank">Brief Editor Emulator for IntelliJ IDEA  Issues</a>&quot;.</p>
-<p>You can email me at <a href="mailto:&#109;&#97;&#105;&#108;&#116;&#111;&#58;rkdawenterprises&#64;gmail&#46;com&#46;no!spam?subject=Brief Editor Emulation for IntelliJ IDEA">rkdawenterprises&#64;gmail&#46;com&#46;no!spam</a>. I don't look at this very often so it may take a while to hear back.</p>
-<p>I started using Brief in the early 1990s when I was at Compaq Computer Corporation working on printers. I thought at the time that it was way superior to any editor I had used to date. I used it for so long, the key bindings and particular functionality just stuck with me.</p>
-<p>I created this project as an exercise for me to learn some Kotlin and Intellij IDEA plugin development; Just having fun. I don't believe there is a high demand for Brief emulation anywhere. Regardless, I have always really liked the Brief key assignments and feature set and I try and set it up in any editor I use. So if you are/were also into Brief, I hope you enjoy using this.</p>
-<p>One of the goals of this project was to have minimal functional effect on the IntelliJ IDEA &quot;Editor Text Document&quot; editor. So this is by no means a perfect example of the Brief editor, and it's a little quirky at times, mainly because it is limited by the API and architecture of the existing editor. I try to note any deviations in the command descriptions, at least, deviations from the limited documentation and knowledge I have. I have also added some commands as documented above. You can, of course, disable any key bindings and/or set them back to default in the <kbd>settings</kbd>-&gt;<kbd>keyboard shortcuts</kbd>.</p>
-<p>BTW, I don't have a working example of Brief, just the old documentation. Feel free to let me know if I have implemented something improperly. Also, I did not try to emulate all of Brief's functionality. This is most certainly a subset.</p>
-<h3 style="color:#0000AA">License</h3>
+Enter bugs at [Brief Editor Emulator for IntelliJ IDEA  Issues](https://github.com/rkdawenterprises/brief4ijidea/issues).
 
+You can email me at [RKDAW Enterprises](mailto:&#109;&#97;&#105;&#108;&#116;&#111;&#58;rkdawenterprises&#64;gmail&#46;com&#46;no!spam?subject=Brief Editor Emulation for IntelliJ IDEA). I don't look at this very often so it may take a while to hear back.
+
+I started using Brief in the early 1990s when I was at Compaq Computer Corporation working on printers.
+I thought at the time that it was way superior to any editor I had used to date. I used it for so long,
+the key bindings and particular functionality just stuck with me.
+
+I created this project as an exercise for me to learn some Kotlin and Intellij IDEA plugin development; Just having fun.
+I don't believe there is a high demand for Brief emulation anywhere. Regardless, I have always really liked the Brief key
+assignments and feature set and I try and set it up in any editor I use. So if you are/were also into Brief, I hope you enjoy using this.
+
+One of the goals of this project was to have minimal functional effect on the IntelliJ IDEA &quot;Editor Text Document&quot; editor. So this is by no means a perfect example of the Brief editor, and it's a little quirky at times, mainly because it is limited by the API and architecture of the existing editor. I try to note any deviations in the command descriptions, at least, deviations from the limited documentation and knowledge I have. I have also added some commands as documented above. You can, of course, disable any key bindings and/or set them back to default in the <kbd>settings</kbd>-&gt;<kbd>keyboard shortcuts</kbd>.
+BTW, I don't have a working example of Brief, just the old documentation. Feel free to let me know if I have implemented something improperly. Also, I did not try to emulate all of Brief's functionality. This is most certainly a subset.
+
+---
+##License
 Copyright 2019-2022 RKDAW Enterprises and Ralph Williamson
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License"); You may not use this file except in compliance with the License.
 
-       http://www.apache.org/licenses/LICENSE-2.0
+You may obtain a copy of the License at [Apache License Verson 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and
 limitations under the License.
 
 ---
-Plugin based on the [IntelliJ Platform Plugin Template][template].
-
-<!-- TODO: Examples only. Needs cleanup. -->
-<!-- Badges -->
-[template]: https://github.com/JetBrains/intellij-platform-plugin-template
-
-[plugin-repo]: https://plugins.jetbrains.com/plugin/164-xxxx
-[plugin-downloads-svg]: http://img.shields.io/jetbrains/plugin/d/xxxx
-[plugin-rating-svg]: http://img.shields.io/jetbrains/plugin/r/rating/xxxx
-[plugin-version-svg]: https://img.shields.io/jetbrains/plugin/v/xxxx?label=version
+Plugin based on the [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template).

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 RKDAW Enterprises and Ralph Williamson
+ * Copyright (c) 2019-2022 RKDAW Enterprises and Ralph Williamson
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
                "unused",
                "SpellCheckingInspection")
 
-package net.ddns.rkdawenterprises.brief4ijidea.utils
+package net.ddns.rkdawenterprises.brief4ijidea
 
 import com.intellij.openapi.editor.LogicalPosition
 import com.intellij.openapi.editor.VisualPosition

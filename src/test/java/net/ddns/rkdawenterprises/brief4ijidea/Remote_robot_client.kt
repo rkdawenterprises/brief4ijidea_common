@@ -2,7 +2,7 @@
                "ClassName",
                "HardCodedStringLiteral")
 
-package net.ddns.rkdawenterprises.brief4ijidea.utils
+package net.ddns.rkdawenterprises.brief4ijidea
 
 import com.intellij.remoterobot.RemoteRobot
 import com.intellij.remoterobot.fixtures.ContainerFixture
