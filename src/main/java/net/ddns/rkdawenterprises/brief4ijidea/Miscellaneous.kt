@@ -27,7 +27,6 @@ package net.ddns.rkdawenterprises.brief4ijidea
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAwareWithCallbacks
 import com.intellij.openapi.actionSystem.impl.ActionManagerImpl
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.command.undo.UndoManager
@@ -38,6 +37,7 @@ import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.openapi.ui.Messages
 import com.intellij.util.ui.UIUtil
 import net.ddns.rkdawenterprises.brief4ijidea.compatibility.get_editor_content_visible_area
+import net.ddns.rkdawenterprises.brief4ijidea.compatibility.perform_action_dumb_aware_with_callbacks
 import java.util.*
 import javax.swing.Icon
 
@@ -213,9 +213,8 @@ fun do_action(action_ID: String,
 {
     val action_manager_ex = ActionManagerImpl.getInstanceEx();
     val action = action_manager_ex.getAction(action_ID);
-    performActionDumbAwareWithCallbacks(action,
-                                        an_action_event,
-                                        an_action_event.dataContext);
+    perform_action_dumb_aware_with_callbacks(action,
+                                             an_action_event);
 }
 
 fun do_action(action_ID: String,
@@ -227,9 +226,8 @@ fun do_action(action_ID: String,
     val action_manager_ex = ActionManagerImpl.getInstanceEx();
     val action = action_manager_ex.getAction(action_ID);
 
-    performActionDumbAwareWithCallbacks(action,
-                                        an_action_event,
-                                        an_action_event.dataContext);
+    perform_action_dumb_aware_with_callbacks(action,
+                                             an_action_event);
 }
 
 fun get_undo_manager(project: Project?): UndoManager
