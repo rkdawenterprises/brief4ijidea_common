@@ -3,7 +3,7 @@
 <h1 style="color:#0000AA;padding-left:100px">Brief Editor Emulator for IntelliJ IDEA</h1>
 <br/>
 </div>
-  
+
 [![Version](https://img.shields.io/jetbrains/plugin/v/net.ddns.rkdawenterprises.brief4ijidea.svg)](https://plugins.jetbrains.com/plugin/net.ddns.rkdawenterprises.brief4ijidea)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/net.ddns.rkdawenterprises.brief4ijidea.svg)](https://plugins.jetbrains.com/plugin/net.ddns.rkdawenterprises.brief4ijidea)
 
@@ -26,7 +26,7 @@ Note! Plugin will not activate until indexing is finished!
 - Manually:
 
   Download the [latest release](https://github.com/rkdawenterprises/brief4ijidea/releases/latest) and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
+  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk</kbd>
 
 ---
 ## Commands
@@ -36,8 +36,13 @@ Some Brief functionality is currently the Intellij IDEA default, or close enough
 No intentional changes to mouse functionality.
 The commands may not work unless the caret is in an active "Editor Text Document". This is done so hopefully the extension won't interfere with existing functionality.
 
-You must enable <kbd>Settings</kbd> -> <kbd>Editor</kbd> -> <kbd>General</kbd> -> <kbd>Virtual Space</kbd> -> <kbd>After the end of line</kbd> for some commands to work properly.
+You must enable
 
+<kbd>Settings</kbd> -> <kbd>Editor</kbd> -> <kbd>General</kbd> -> <kbd>Virtual Space</kbd> -> <kbd>After the end of line</kbd>
+
+for some commands to work properly.
+
+<div>
 <table style="background-color:#F5FFFF">
     <caption style="color:#0000AA; background-color:#F5FFFF">Help and Undo/Redo</caption>
     <tr><th width="15%">Key Binding</th><th width="20%">Command</th><th width="65%">Description</th></tr>
@@ -113,19 +118,22 @@ You must enable <kbd>Settings</kbd> -> <kbd>Editor</kbd> -> <kbd>General</kbd> -
     <tr><td>Shift + F6</td><td>Translate again</td><td>Translates (replaces) forwards using previous search/replace parameters. Only works if the search dialog is open.</td></tr>
     <tr><td>Ctrl + R</td><td>Repeat</td><td>!!!Not functional (WIP)!!! Opens the &quot;Repeat Dialog&quot;, then repeats the requested command, or inserts the requested char/string into the editor, the requested number of times. Not all commands are supported or work well. Actually accepts any &quot;non-printable&quot; key sequence, so not sure what works actually.</td></tr>
 </table>
-
----
-###Notes
-* The extension may not work as well with line/code folding (not well tested). So if there are issues, it's best to unfold
-the area of the file you are working on if you want the commands to work as expected.
-* I was only able to account for most Brief defined keystrokes affect in the marking modes. Turn off an active marking mode
-to use other commands. I couldn't find a way to generally monitor all keystrokes to affect/or disable an active marking mode
-as a result of a keystroke.
-* Does not support multiple carets (not tested).
-* Column marking mode is independent of, and does not work with IDEA Column Selection Mode. It creates a custom MIME type
-in the clipboard. Brief's column selection and paste is unique and superior to most implementations, IMHO. The paste
+<div style="background-color:#F5FFFF">
+<h4 style="color:#0000AA">Notes<sup>*</sup></h3>
+<ul>
+<li>The extension may not work as well with line/code folding (not well tested). So best to unfold the area of the file
+you are working on if you want the commands to work as expected.</li>
+<li>I was only able to account for most Brief defined keystrokes affect in the marking modes. Turn off an active marking
+mode to use other commands. I couldn't find a way to generally monitor all keystrokes to affect/or disable an active marking
+mode as a result of a keystroke.</li>
+<li>Does not support multiple carets (not tested).</li>
+<li>Column marking mode is independent of, and does not work with IDEA Column Selection Mode. It creates a custom MIME
+type in the clipboard. Brief's column selection and paste is unique, and superior to most implementations, IMHO. The paste
 relocates the cursor such that using the single key INS allows you to paste from the top to the bottom of the document
-by holding down the key.
+by holding down the key.</li>
+</ul>
+</div>
+</div>
 
 ---
 ## Contact/Bugs
@@ -141,11 +149,16 @@ I created this project as an exercise for me to learn some Kotlin and Intellij I
 I don't believe there is a high demand for Brief emulation anywhere. Regardless, I have always really liked the Brief key
 assignments and feature set and I try and set it up in any editor I use. So if you are/were also into Brief, I hope you enjoy using this.
 
-One of the goals of this project was to have minimal functional effect on the IntelliJ IDEA &quot;Editor Text Document&quot; editor. So this is by no means a perfect example of the Brief editor, and it's a little quirky at times, mainly because it is limited by the API and architecture of the existing editor. I try to note any deviations in the command descriptions, at least, deviations from the limited documentation and knowledge I have. I have also added some commands as documented above. You can, of course, disable any key bindings and/or set them back to default in the <kbd>settings</kbd>-&gt;<kbd>keyboard shortcuts</kbd>.
+One of the goals of this project was to have minimal functional effect on the IntelliJ IDEA &quot;Editor Text Document&quot; editor. So this is by no means a perfect example of the Brief editor, and it's a little quirky at times, mainly because it is limited by the API and architecture of the existing editor. I try to note any deviations in the command descriptions, at least, deviations from the limited documentation and knowledge I have. I have also added some commands as documented above. You can, of course, disable any key bindings and/or set them back to default with
+
+<kbd>settings</kbd>-&gt;<kbd>keyboard shortcuts</kbd>
+
+in the menus.
+
 BTW, I don't have a working example of Brief, just the old documentation. Feel free to let me know if I have implemented something improperly. Also, I did not try to emulate all of Brief's functionality. This is most certainly a subset.
 
 ---
-##License
+## License
 Copyright 2019-2022 RKDAW Enterprises and Ralph Williamson
 
 Licensed under the Apache License, Version 2.0 (the "License"); You may not use this file except in compliance with the License.
