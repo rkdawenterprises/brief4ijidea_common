@@ -1292,41 +1292,6 @@ class Main_test
         }
     }
 
-//    private fun IdeaFrame.test_quick_java_doc_command()
-//    {
-//        val text_editor_fixture = textEditor()
-//        val editor_fixture = text_editor_fixture.editor
-//
-//        step("Command: Quick Java Doc. Description: Show contextual documentation popup.")
-//        {
-//            editor_fixture.scroll_to_line(42);
-//            waitFor { editor_fixture.hasText("SuppressWarnings") }
-//            editor_fixture.findText("SuppressWarnings")
-//                .click()
-//            editor_fixture.keyboard {
-//                hotKey(VK_CONTROL,
-//                       VK_H)
-//            }
-//
-//            waitFor { heavyWeightWindows().size == 1 }
-//            val all_text = heavyWeightWindows()[0].find(CommonContainerFixture::class.java,
-//                                                        byXpath("//div[@class='DocumentationHintEditorPane']"),
-//                                                        Duration.ofSeconds(5))
-//                .findAllText()
-//            var found_it = 0
-//            for(i in all_text.indices)
-//            {
-//                if((found_it == 0) && all_text[i].text.contains("public")) found_it++;
-//                if((found_it == 1) && all_text[i].text.contains("interface")) found_it++;
-//                if((found_it == 2) && all_text[i].text.contains("SuppressWarnings")) found_it++;
-//                if((found_it == 3) && all_text[i].text.contains("extends")) found_it++;
-//                if((found_it == 4) && all_text[i].text.contains("annotation.Annotation")) found_it++;
-//            }
-//
-//            assert(found_it == 5)
-//        }
-//    }
-
     private fun IdeaFrame.test_help_menu_command()
     {
         val text_editor_fixture = textEditor()

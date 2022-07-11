@@ -36,9 +36,8 @@ import com.intellij.openapi.editor.LogicalPosition
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.openapi.ui.Messages
-import com.intellij.util.SystemProperties.isTrueSmoothScrollingEnabled
 import com.intellij.util.ui.UIUtil
-import java.awt.Rectangle
+import net.ddns.rkdawenterprises.brief4ijidea.compatibility.get_editor_content_visible_area
 import java.util.*
 import javax.swing.Icon
 
@@ -165,12 +164,6 @@ class Message internal constructor(private val title: String?,
 
         return if(result < 0) null else m_buttons[result];
     }
-}
-
-fun get_editor_content_visible_area(editor: Editor): Rectangle
-{
-    val model = editor.scrollingModel
-    return if(isTrueSmoothScrollingEnabled()) model.visibleAreaOnScrollingFinished else model.visibleArea;
 }
 
 fun to_nearest_visual_line_base(editor: Editor,

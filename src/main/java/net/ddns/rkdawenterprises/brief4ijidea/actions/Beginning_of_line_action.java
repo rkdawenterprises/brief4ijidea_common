@@ -30,7 +30,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 import static net.ddns.rkdawenterprises.brief4ijidea.MiscellaneousKt.do_action;
-import static net.ddns.rkdawenterprises.brief4ijidea.MiscellaneousKt.get_editor_content_visible_area;
+import static net.ddns.rkdawenterprises.brief4ijidea.compatibility.CompatibilityKt.get_editor_content_visible_area;
 
 @SuppressWarnings({ "ComponentNotRegistered", "unused", "UnnecessaryReturnStatement" })
 public class Beginning_of_line_action

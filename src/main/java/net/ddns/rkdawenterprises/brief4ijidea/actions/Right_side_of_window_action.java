@@ -25,8 +25,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 
-import static net.ddns.rkdawenterprises.brief4ijidea.MiscellaneousKt.get_editor_content_visible_area;
 import static net.ddns.rkdawenterprises.brief4ijidea.MiscellaneousKt.virtual_space_setting_warning;
+import static net.ddns.rkdawenterprises.brief4ijidea.compatibility.CompatibilityKt.get_editor_content_visible_area;
 
 @SuppressWarnings({ "ComponentNotRegistered", "unused" })
 public class Right_side_of_window_action
