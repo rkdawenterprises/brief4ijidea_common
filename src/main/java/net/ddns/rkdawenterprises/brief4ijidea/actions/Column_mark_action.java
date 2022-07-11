@@ -25,6 +25,8 @@ import net.ddns.rkdawenterprises.brief4ijidea.Localized_messages;
 import org.jetbrains.annotations.NotNull;
 
 import static net.ddns.rkdawenterprises.brief4ijidea.MiscellaneousKt.*;
+import static net.ddns.rkdawenterprises.brief4ijidea.compatibility.CompatibilityKt.virtual_space_setting_warning;
+import static net.ddns.rkdawenterprises.brief4ijidea.compatibility.CompatibilityKt.warning_message;
 
 @SuppressWarnings({ "ComponentNotRegistered", "unused" })
 public class Column_mark_action
