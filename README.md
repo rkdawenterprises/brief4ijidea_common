@@ -40,7 +40,7 @@ You must enable
 
 <kbd>Settings</kbd> -> <kbd>Editor</kbd> -> <kbd>General</kbd> -> <kbd>Virtual Space</kbd> -> <kbd>After the end of line</kbd>
 
-for some commands to work properly.
+for some commands (Column Marking Mode, and Right side of window) to work properly.
 
 <div>
 <table style="background-color:#F5FFFF">
