@@ -139,7 +139,7 @@ by holding down the key.</li>
 ## Contact/Bugs
 Enter bugs at [Brief Editor Emulator for IntelliJ IDEA  Issues](https://github.com/rkdawenterprises/brief4ijidea/issues).
 
-You can email me at [RKDAW Enterprises](mailto:&#109;&#97;&#105;&#108;&#116;&#111;&#58;rkdawenterprises&#64;gmail&#46;com&#46;no!spam?subject=Brief Editor Emulation for IntelliJ IDEA). I don't look at this very often so it may take a while to hear back.
+<p>You can email me at <a href="mailto:&#109;&#97;&#105;&#108;&#116;&#111;&#58;rkdawenterprises&#64;gmail&#46;com&#46;no!spam?subject=Brief Editor Emulation for IntelliJ IDEA">rkdawenterprises&#64;gmail&#46;com&#46;no!spam</a>. I don't look at this very often so it may take a while to hear back.</p>
 
 I started using Brief in the early 1990s when I was at Compaq Computer Corporation working on printers.
 I thought at the time that it was way superior to any editor I had used to date. I used it for so long,
