@@ -562,7 +562,8 @@ public class Column_marking_component
                               String block_JSON )
     {
         Column_mode_block_data block_data = Column_mode_block_data.deserialize_from_JSON( block_JSON );
-
+        if( block_data == null ) return;
+        
         ApplicationManager.getApplication()
                           .runWriteAction( () ->
                                            {
@@ -742,7 +743,7 @@ public class Column_marking_component
 
         public static Column_mode_block_data deserialize_from_JSON( String block_JSON )
         {
-            Column_mode_block_data block_data;
+            Column_mode_block_data block_data = null;
             try
             {
                 Gson gson = new GsonBuilder().disableHtmlEscaping()
@@ -753,7 +754,8 @@ public class Column_marking_component
             }
             catch( com.google.gson.JsonSyntaxException exception )
             {
-                throw new RuntimeException( "Bad paste data format for " + Column_mode_block_transferable.get_mime_type() + ": " + exception );
+                System.out.println( "Bad paste data format for " + Column_mode_block_transferable.get_mime_type() + ": " + exception );
+                System.out.println( ">>>" + block_JSON + "<<<");
             }
 
             return block_data;

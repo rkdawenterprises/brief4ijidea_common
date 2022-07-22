@@ -2,6 +2,10 @@
 
 # Brief Emulator for Intellij IDEA
 
+## [1.0.6] - 2022-07-22
+### Fixed
+- Fixed issue pasting column marking mode data into a comment block.
+
 ## [1.0.5] - 2022-07-15
 ### Added
 - Extensive rework to support multiple IntelliJ platform build versions.

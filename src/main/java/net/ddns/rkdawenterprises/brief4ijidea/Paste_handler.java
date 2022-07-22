@@ -278,6 +278,15 @@ public class Paste_handler
             blockIndentAnchorColumn = col;
         }
 
+        if( text.contains( Column_marking_component.Column_mode_block_transferable.get_mime_type() ) )
+        {
+            // Pasting column marking mode content. Pasting "as-is", no further processing.
+            Column_marking_component.paste( project,
+                                            editor,
+                                            text );
+            return;
+        }
+
         // We assume that EditorModificationUtil.insertStringAtCaret() is smart enough to remove currently selected text (if any).
 
         RawText rawText = RawText.fromTransferable( content );
@@ -298,15 +307,6 @@ public class Paste_handler
         if( LanguageFormatting.INSTANCE.forContext( file ) == null && indentOptions != CodeInsightSettings.NO_REFORMAT )
         {
             indentOptions = CodeInsightSettings.INDENT_BLOCK;
-        }
-
-        if( text.contains( Column_marking_component.Column_mode_block_transferable.get_mime_type() ) )
-        {
-            // Pasting column marking mode content. Pasting "as-is", no further processing.
-            Column_marking_component.paste( project,
-                                            editor,
-                                            text );
-            return;
         }
 
         final String _text = text;
