@@ -2,7 +2,7 @@ This software includes software from Brief Editor Emulator for IntelliJ IDEA.
 
 https://github.com/rkdawenterprises/brief4ijidea
 
-   Copyright 2019-2022 RKDAW Enterprises and Ralph Williamson
+   Copyright 2019-2023 RKDAW Enterprises and Ralph Williamson
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

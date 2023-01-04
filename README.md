@@ -119,7 +119,7 @@ for some commands (Column Marking Mode, and Right side of window) to work proper
     <tr><td>Ctrl + R</td><td>Repeat</td><td>!!!Not functional (WIP)!!! Opens the &quot;Repeat Dialog&quot;, then repeats the requested command, or inserts the requested char/string into the editor, the requested number of times. Not all commands are supported or work well. Actually accepts any &quot;non-printable&quot; key sequence, so not sure what works actually.</td></tr>
 </table>
 <div style="background-color:#F5FFFF">
-<h4 style="color:#0000AA">Notes<sup>*</sup></h3>
+<h4 style="color:#0000AA">Notes<sup>*</sup></h4>
 <ul>
 <li>The extension may not work as well with line/code folding (not well tested). So best to unfold the area of the file
 you are working on if you want the commands to work as expected.</li>
