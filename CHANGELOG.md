@@ -2,6 +2,10 @@
 
 # Brief Emulator for Intellij IDEA
 
+## [1.0.7] - 2023-04-15
+### Changed
+- Just a version change to upload support for 222 platform.
+
 ## [1.0.6] - 2022-07-22
 ### Fixed
 - Fixed issue pasting column marking mode data into a comment block.
