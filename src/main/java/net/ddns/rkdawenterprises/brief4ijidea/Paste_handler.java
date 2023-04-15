@@ -51,8 +51,9 @@ import java.util.*;
  * This handler is used to move the cursor to the beginning of the current line when pasting clipboard content that are
  * lines (ends in line termination), with no active selection. This could be done in the paste action, but then the
  * language formatters would not kick in, nor would it work with the paste-multiple dialog. But this method seems to
- * work for all that. It also handles inserting/pasting the Brief emulation column marking mode MIME type clipboard
- * content.
+ * work for all that.
+ * <p>
+ * It also handles inserting/pasting the Brief emulation column marking mode MIME type clipboard content.
  * <p>
  * TODO: com.intellij.ide.actions.PasteReferenceProvider
  * TODO: com.intellij.codeInsight.editorActions.PasteHandler
